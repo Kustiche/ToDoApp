@@ -5,11 +5,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ToDoApp</title>
-  <link rel="stylesheet" href="scss/style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-
+  <section class="todo">
+    <h1 class="todo__title">ToDoApp</h1>
+    <div class="container">
+      <div class="todo__wrap">
+        <h2 class="todo__subtitle">Tasks</h2>
+        <div class="todo__content">
+          <form class="todo__form form">
+            <input class="form__input" type="text" placeholder="Добавить важных дел" required>
+            <button class="form__btn btn-reset">Отправить</button>
+          </form>
+          <ul class="todo__list list-reset list">
+            <li class="list__item">
+              <input class="list__checkbox" type="checkbox">
+              <div class="list__content">
+                <p class="list__text">Сверстать этот TODO list</p>
+                <p class="list__priority">#Важно</p>
+              </div>
+              <button class="list__btn btn-reset">Удалить</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 </body>
 
 </html>
