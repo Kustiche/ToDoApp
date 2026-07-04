@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <link type="image/svg+xml" href="resources/favicon/favicon.svg" rel="icon" />
+  <link href="css/style.css" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ToDo</title>
+</head>
+
+<body>
+  <section class="todo">
+    <div class="container">
+      <div class="todo__wrap">
+        <h1 class="todo__title">Список задач</h1>
+        <div class="todo__priorities">
+          <div class="todo__inner">
+            <form class="form" action="#">
+              <div class="form__inner-input inner-input">
+                <input class="form__input-text input" type="text" placeholder="Добавить задачу..." />
+              </div>
+            </form>
+            <div class="todo__inner-tasks">
+              <div class="todo__task">
+                <p class="todo__text">greg</p>
+                <button class="todo__btn-delete btn-reset"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <template id="task">
+    <div class="todo__task">
+      <p class="todo__text"></p>
+      <button class="todo__btn-delete btn-reset"></button>
+    </div>
+  </template>
+  <dialog class="modal-editing-task modal" id="modalTaskEditing">
+    <div class="modal__inner-btn-close">
+      <button class="modal__btn-close btn-reset"></button>
+    </div>
+    <h2 class="modal__title">Редактирование задачи</h2>
+    <form class="modal__form" action="#">
+      <div class="modal__inner-input inner-input">
+        <input class="modal__input-text input" type="text" placeholder="Добавить задачу..." />
+      </div>
+      <button class="modal__btn btn-reset">Сохранить</button>
+    </form>
+  </dialog>
+  <script src="js/main.js" type="module"></script>
+</body>
+
+</html>

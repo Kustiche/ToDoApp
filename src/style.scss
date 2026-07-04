@@ -1,0 +1,338 @@
+@font-face {
+  font-family: 'Seoulnamsan';
+  src: url('../resources/fonts/Seoulnamsan-ceb.woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+$white: #ffffff;
+$mine-shaft: #2f2f2f;
+$silver-chalice: #a1a1a1;
+$barberry: #e7e61a;
+$dove-gray: #707070;
+$mine: #222222;
+$red: #f90614;
+
+@import 'libs/normalize';
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Seoulnamsan', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 27px;
+  background-color: $mine;
+  color: $white;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 490px;
+}
+
+.btn-reset {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+.link-reset {
+  text-decoration: none;
+  color: inherit;
+}
+
+.list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.input {
+  all: unset;
+  padding: 15px;
+  width: 93%;
+  border-radius: 1000px;
+  border: 1px solid $silver-chalice;
+  box-shadow: 0px 0px 15px 0px $silver-chalice;
+  font-size: 18px;
+  line-height: normal;
+
+  &--padding-error {
+    border: 1px solid $red;
+  }
+}
+
+.inner-input {
+  width: 100%;
+  border-radius: 1000px;
+
+  &--padding-error {
+    position: relative;
+    &::after {
+      position: absolute;
+      content: '*Пустое поле';
+      font-size: 12px;
+      line-height: 12px;
+      color: $red;
+      bottom: -4px;
+      left: 21px;
+      transform: translateY(100%);
+    }
+  }
+}
+
+.todo {
+  padding-top: 100px;
+  padding-bottom: 80px;
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 70px;
+    font-weight: 400;
+    line-height: normal;
+    font-size: 64px;
+  }
+
+  &__priorities {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+    width: 100%;
+    max-width: 460px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__subtitle {
+    margin: 0;
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 10px;
+    width: 100%;
+    border-radius: 20px;
+    background-color: $mine-shaft;
+  }
+
+  &__inner-tasks {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  &__task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px 25px;
+    width: 100%;
+    background-color: $mine;
+    border-radius: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    font-size: 16px;
+    line-height: normal;
+
+    &--performed {
+      color: $silver-chalice;
+      position: relative;
+      text-decoration: line-through;
+    }
+  }
+
+  &__btn-delete {
+    width: 100%;
+    max-width: 15px;
+    min-height: 15px;
+    position: relative;
+    transition: transform 0.4s;
+
+    &::after,
+    &::before {
+      position: absolute;
+      content: '';
+      width: 15px;
+      border-top: 2px solid $white;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%) rotate(45deg);
+    }
+
+    &::before {
+      transform: translateY(-50%) rotate(-45deg);
+    }
+
+    &:hover {
+      transform: scale(1.5);
+    }
+  }
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+  width: 100%;
+
+  &--padding-error {
+    margin-bottom: 25px;
+  }
+}
+
+.cookies {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 15px;
+  width: 100%;
+  max-width: 460px;
+  background-color: $mine-shaft;
+  border-radius: 20px;
+  box-shadow: 0px 0px 15px 0px $silver-chalice;
+  position: fixed;
+  top: 30px;
+  left: 30px;
+  transition: top 0.4s;
+
+  &--hidden {
+    top: -200px;
+  }
+
+  &__text {
+    margin: 0;
+    font-size: 20px;
+    line-height: normal;
+  }
+
+  &__link {
+    margin-bottom: 10px;
+  }
+
+  &__btn {
+    padding: 5px 10px;
+    background-color: $mine;
+    border-radius: 10px;
+    font-size: 20px;
+    line-height: normal;
+    transition: all 0.4s;
+
+    &:hover {
+      box-shadow: 0px 0px 15px 0px $silver-chalice;
+      transform: scale(0.95);
+    }
+  }
+}
+
+.modal {
+  padding-top: 40px;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 30px;
+  background-color: $mine-shaft;
+  border: none;
+  box-shadow: 0px 0px 15px 0px $silver-chalice;
+  position: relative;
+
+  &__inner-btn-close {
+    width: 15px;
+    height: 15px;
+    line-height: 0;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+
+  &__btn-close {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+
+    &::after,
+    &::before {
+      position: absolute;
+      content: '';
+      width: 15px;
+      border-top: 2px solid $white;
+      top: 50%;
+      right: 0;
+      transform: rotate(-45deg);
+    }
+
+    &::before {
+      transform: rotate(45deg);
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    color: $white;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__inner-input {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  &__input-text {
+    width: 91%;
+    color: $white;
+  }
+
+  &__btn {
+    color: $white;
+  }
+}
