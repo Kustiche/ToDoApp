@@ -11,6 +11,7 @@ export function addTask() {
   } else {
     tasks.push(inputText);
     localStorage.setItem('tasks', JSON.stringify(tasks));
+    input.value = '';
   }
 
   render();
