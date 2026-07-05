@@ -11,6 +11,7 @@ export const PRIORITIES = {
 export const closeModalBtn = document.querySelector('.modal__btn-close');
 export const modalForm = document.querySelector('.modal__form');
 export const modalInnerStatuses = document.querySelector('.modal__inner-statuses');
+export const modalInnerPriorities = document.querySelector('.modal__inner-priorities');
 
 export const forms = document.querySelectorAll('.form');
 export const innersTasks = document.querySelectorAll('.todo__inner-tasks');

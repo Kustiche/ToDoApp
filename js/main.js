@@ -1,11 +1,12 @@
 import { addTask } from './addTask.js';
+import { changePriority } from './changePriority.js';
 import { changeStatus } from './changeStatus.js';
 import { closeModalEditingTasks } from './closeModalEditingTasks.js';
 import { deleteTask } from './deleteTask.js';
 import { editingTask } from './editingTask.js';
 import { openModalEditingTasks } from './openModalEditingTasks.js';
 import { render } from './render.js';
-import { closeModalBtn, forms, innersTasks, modalEditingTask, modalForm, modalInnerStatuses } from './view.js';
+import { closeModalBtn, forms, innersTasks, modalEditingTask, modalForm, modalInnerPriorities, modalInnerStatuses } from './view.js';
 
 export const tasks = JSON.parse(localStorage.getItem('tasks')) ?? [];
 
@@ -54,6 +55,10 @@ modalForm.addEventListener('submit', (e) => {
 
 modalInnerStatuses.addEventListener('click', (e) => {
   changeStatus(e.target, task);
+});
+
+modalInnerPriorities.addEventListener('click', (e) => {
+  changePriority(e.target, task);
 });
 
 render();
