@@ -15,7 +15,7 @@ export function addTask(form) {
     tasks.push({
       text: inputText,
       status: STATUSES.IN_PROGRESS,
-      priorities: isInnerHighPriority ? PRIORITIES.HIGH : PRIORITIES.LOW,
+      priority: isInnerHighPriority ? PRIORITIES.HIGH : PRIORITIES.LOW,
     });
     localStorage.setItem('tasks', JSON.stringify(tasks));
     input.value = '';
