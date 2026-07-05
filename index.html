@@ -14,7 +14,20 @@
     <div class="container">
       <div class="todo__wrap">
         <h1 class="todo__title">Список задач</h1>
-        <div class="todo__priorities">
+        <div class="todo__priorities" id="highPriority">
+          <h2 class="todo__subtitle">Высокий приоритет</h2>
+          <div class="todo__inner">
+            <form class="form" action="#">
+              <div class="form__inner-input inner-input">
+                <input class="form__input-text input" type="text" placeholder="Добавить задачу..." />
+              </div>
+            </form>
+            <div class="todo__inner-tasks">
+            </div>
+          </div>
+        </div>
+        <div class="todo__priorities" id="lowPriority">
+          <h2 class="todo__subtitle">Низкий приоритет</h2>
           <div class="todo__inner">
             <form class="form" action="#">
               <div class="form__inner-input inner-input">
