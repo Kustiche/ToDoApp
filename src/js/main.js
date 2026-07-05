@@ -1,10 +1,13 @@
 import { addTask } from './addTask.js';
 import { closeModalEditingTasks } from './closeModalEditingTasks.js';
 import { deleteTask } from './deleteTask.js';
+import { editingTask } from './editingTask.js';
 import { openModalEditingTasks } from './openModalEditingTasks.js';
-import { closeModalBtn, form, innerTasks, modalEditingTask } from './view.js';
+import { closeModalBtn, form, innerTasks, modalEditingTask, modalForm } from './view.js';
 
 export const tasks = [];
+
+let task = null;
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -17,6 +20,8 @@ innerTasks.addEventListener('click', (e) => {
   const isTaskDeleteBtn = e.target.classList.contains('todo__btn-delete');
 
   if (isTaskText) {
+    task = e.target;
+
     openModalEditingTasks(e.target);
   } else if (isTaskDeleteBtn) {
     deleteTask(e.target);
@@ -33,4 +38,10 @@ modalEditingTask.addEventListener('click', (e) => {
 
 closeModalBtn.addEventListener('click', () => {
   closeModalEditingTasks();
+});
+
+modalForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  editingTask(e.target, task);
 });
