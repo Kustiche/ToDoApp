@@ -339,6 +339,27 @@ body {
   }
 
   &__btn {
+    padding: 15px 10px;
+    width: 150px;
     color: $white;
+    border: 2px solid #ffffff;
+    border-radius: 20px;
+  }
+
+  &__form-btn {
+    margin-bottom: 15px;
+  }
+
+  &__inner-statuses {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  &__inner-priorities {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }

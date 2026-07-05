@@ -605,5 +605,23 @@ body {
   color: #ffffff;
 }
 .modal__btn {
+  padding: 15px 10px;
+  width: 150px;
   color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 20px;
+}
+.modal__form-btn {
+  margin-bottom: 15px;
+}
+.modal__inner-statuses {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.modal__inner-priorities {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
