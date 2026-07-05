@@ -13,14 +13,8 @@ export function changeStatus(target, task) {
 
     if (isIdTask && isBtnDone) {
       el.status = STATUSES.DONE;
-
-      modalBtnDone.style.backgroundColor = '#5F646D';
-      modalBtnInProgress.style.backgroundColor = '';
     } else if (isIdTask && isBtnInProgress) {
       el.status = STATUSES.IN_PROGRESS;
-
-      modalBtnInProgress.style.backgroundColor = '#5F646D';
-      modalBtnDone.style.backgroundColor = '';
     }
   });
 

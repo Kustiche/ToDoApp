@@ -1,8 +1,8 @@
+import { preparingModalBeforeOpening } from './preparingModalBeforeOpening.js';
 import { modalEditingTask } from './view.js';
 
 export function openModalEditingTasks(taskText) {
-  const editingInput = modalEditingTask.querySelector('.modal__input-text');
+  preparingModalBeforeOpening(taskText);
 
-  editingInput.value = taskText.textContent;
   modalEditingTask.showModal();
 }
