@@ -1,10 +1,11 @@
 import { addTask } from './addTask.js';
+import { changeStatus } from './changeStatus.js';
 import { closeModalEditingTasks } from './closeModalEditingTasks.js';
 import { deleteTask } from './deleteTask.js';
 import { editingTask } from './editingTask.js';
 import { openModalEditingTasks } from './openModalEditingTasks.js';
 import { render } from './render.js';
-import { closeModalBtn, forms, innersTasks, modalEditingTask, modalForm } from './view.js';
+import { closeModalBtn, forms, innersTasks, modalEditingTask, modalForm, modalInnerStatuses } from './view.js';
 
 export const tasks = JSON.parse(localStorage.getItem('tasks')) ?? [];
 
@@ -24,7 +25,7 @@ innersTasks.forEach((innerTasks) => {
     const isTaskDeleteBtn = e.target.classList.contains('todo__btn-delete');
 
     if (isTaskText) {
-      task = e.target;
+      task = e.target.closest('.todo__task');
 
       openModalEditingTasks(e.target);
     } else if (isTaskDeleteBtn) {
@@ -49,6 +50,10 @@ modalForm.addEventListener('submit', (e) => {
   e.preventDefault();
 
   editingTask(e.target, task);
+});
+
+modalInnerStatuses.addEventListener('click', (e) => {
+  changeStatus(e.target, task);
 });
 
 render();
