@@ -5,8 +5,8 @@ import { innerTasks } from './view.js';
 export function render() {
   innerTasks.innerHTML = '';
 
-  tasks.forEach((task) => {
-    const cloneTask = templateCloning(task);
+  tasks.forEach((task, id) => {
+    const cloneTask = templateCloning(task, id);
 
     innerTasks.append(cloneTask);
   });
