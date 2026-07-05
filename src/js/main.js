@@ -1,7 +1,8 @@
 import { addTask } from './addTask.js';
+import { closeModalEditingTasks } from './closeModalEditingTasks.js';
 import { deleteTask } from './deleteTask.js';
 import { openModalEditingTasks } from './openModalEditingTasks.js';
-import { form, innerTasks } from './view.js';
+import { closeModalBtn, form, innerTasks, modalEditingTask } from './view.js';
 
 export const tasks = [];
 
@@ -20,4 +21,16 @@ innerTasks.addEventListener('click', (e) => {
   } else if (isTaskDeleteBtn) {
     deleteTask(e.target);
   }
+});
+
+modalEditingTask.addEventListener('click', (e) => {
+  const isModalClick = e.target.closest('.modal__inner');
+
+  if (!isModalClick) {
+    closeModalEditingTasks();
+  }
+});
+
+closeModalBtn.addEventListener('click', () => {
+  closeModalEditingTasks();
 });
