@@ -6,12 +6,17 @@ export function editingTask(target, task) {
   const modalInputForm = target.querySelector('.modal__input-text');
   const modalInputValue = modalInputForm.value;
   const taskText = task.textContent;
+  const isModalInputValue = modalInputValue === '';
 
-  tasks.forEach((el, id) => {
-    if (el === taskText) {
-      tasks[id] = modalInputValue;
-    }
-  });
+  if (isModalInputValue) {
+    alert('Error: Нельзя иметь пустую задачу');
+  } else {
+    tasks.forEach((el, id) => {
+      if (el === taskText) {
+        tasks[id] = modalInputValue;
+      }
+    });
+  }
 
   render();
   closeModalEditingTasks();

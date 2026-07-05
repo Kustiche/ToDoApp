@@ -4,8 +4,13 @@ import { input } from './view.js';
 
 export function addTask() {
   const inputText = input.value;
+  const isInputText = inputText === '';
 
-  tasks.push(inputText);
+  if (isInputText) {
+    alert('Error: Нельзя создать пустую задачу');
+  } else {
+    tasks.push(inputText);
+  }
 
   render();
 }
