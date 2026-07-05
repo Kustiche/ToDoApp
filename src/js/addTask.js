@@ -3,7 +3,7 @@ import { render } from './render.js';
 import { input } from './view.js';
 
 export function addTask() {
-  const inputText = input.value;
+  const inputText = input.value.trim().replace(/\s+/g, ' ');
   const isInputText = inputText === '';
 
   if (isInputText) {

@@ -4,7 +4,7 @@ import { render } from './render.js';
 
 export function editingTask(target, task) {
   const modalInputForm = target.querySelector('.modal__input-text');
-  const modalInputValue = modalInputForm.value;
+  const modalInputValue = modalInputForm.value.trim().replace(/\s+/g, ' ');
   const taskText = task.textContent;
   const isModalInputValue = modalInputValue === '';
 
