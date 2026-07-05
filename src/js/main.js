@@ -1,6 +1,6 @@
 import { addTask } from './addTask.js';
 import { deleteTask } from './deleteTask.js';
-import { openEditingModal } from './openEditingModal.js';
+import { openModalEditingTasks } from './openModalEditingTasks.js';
 import { form, innerTasks } from './view.js';
 
 export const tasks = [];
@@ -16,7 +16,7 @@ innerTasks.addEventListener('click', (e) => {
   const isTaskDeleteBtn = e.target.classList.contains('todo__btn-delete');
 
   if (isTaskText) {
-    openEditingModal(e.target);
+    openModalEditingTasks(e.target);
   } else if (isTaskDeleteBtn) {
     deleteTask(e.target);
   }
