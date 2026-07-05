@@ -4,30 +4,32 @@ import { deleteTask } from './deleteTask.js';
 import { editingTask } from './editingTask.js';
 import { openModalEditingTasks } from './openModalEditingTasks.js';
 import { render } from './render.js';
-import { closeModalBtn, form, innerTasks, modalEditingTask, modalForm } from './view.js';
+import { closeModalBtn, forms, modalEditingTask, modalForm } from './view.js';
 
 export const tasks = [] ?? JSON.parse(localStorage.getItem('tasks'));
 
 let task = null;
 
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
+forms.forEach((form) => {
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
 
-  addTask();
+    addTask(form);
+  });
 });
 
-innerTasks.addEventListener('click', (e) => {
-  const isTaskText = e.target.classList.contains('todo__text');
-  const isTaskDeleteBtn = e.target.classList.contains('todo__btn-delete');
+// innerTasks.addEventListener('click', (e) => {
+//   const isTaskText = e.target.classList.contains('todo__text');
+//   const isTaskDeleteBtn = e.target.classList.contains('todo__btn-delete');
 
-  if (isTaskText) {
-    task = e.target;
+//   if (isTaskText) {
+//     task = e.target;
 
-    openModalEditingTasks(e.target);
-  } else if (isTaskDeleteBtn) {
-    deleteTask(e.target);
-  }
-});
+//     openModalEditingTasks(e.target);
+//   } else if (isTaskDeleteBtn) {
+//     deleteTask(e.target);
+//   }
+// });
 
 modalEditingTask.addEventListener('click', (e) => {
   const isModalClick = e.target.closest('.modal__inner');
