@@ -10,6 +10,7 @@ export function addTask() {
     alert('Error: Нельзя создать пустую задачу');
   } else {
     tasks.push(inputText);
+    localStorage.setItem('tasks', JSON.stringify(tasks));
   }
 
   render();

@@ -6,6 +6,7 @@ export function deleteTask(deleteBtn) {
   const taskId = task.id;
 
   tasks.splice(taskId, 1);
+  localStorage.setItem('tasks', JSON.stringify(tasks));
 
   render();
 }

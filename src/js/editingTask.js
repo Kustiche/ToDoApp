@@ -16,6 +16,8 @@ export function editingTask(target, task) {
         tasks[id] = modalInputValue;
       }
     });
+
+    localStorage.setItem('tasks', JSON.stringify(tasks));
   }
 
   render();

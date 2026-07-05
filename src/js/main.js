@@ -3,9 +3,10 @@ import { closeModalEditingTasks } from './closeModalEditingTasks.js';
 import { deleteTask } from './deleteTask.js';
 import { editingTask } from './editingTask.js';
 import { openModalEditingTasks } from './openModalEditingTasks.js';
+import { render } from './render.js';
 import { closeModalBtn, form, innerTasks, modalEditingTask, modalForm } from './view.js';
 
-export const tasks = [];
+export const tasks = [] && JSON.parse(localStorage.getItem('tasks'));
 
 let task = null;
 
@@ -45,3 +46,5 @@ modalForm.addEventListener('submit', (e) => {
 
   editingTask(e.target, task);
 });
+
+render();
