@@ -6,7 +6,7 @@ import { openModalEditingTasks } from './openModalEditingTasks.js';
 import { render } from './render.js';
 import { closeModalBtn, form, innerTasks, modalEditingTask, modalForm } from './view.js';
 
-export const tasks = [] && JSON.parse(localStorage.getItem('tasks'));
+export const tasks = [] ?? JSON.parse(localStorage.getItem('tasks'));
 
 let task = null;
 
