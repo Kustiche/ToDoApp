@@ -12,7 +12,9 @@ export function editingTask(target, task) {
     alert('Error: Нельзя иметь пустую задачу');
   } else {
     tasks.forEach((el, id) => {
-      if (el.text === taskText) {
+      const isIdTask = id === Number(task.id);
+
+      if (isIdTask) {
         tasks[id].text = modalInputValue;
       }
     });

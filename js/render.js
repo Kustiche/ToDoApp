@@ -12,7 +12,7 @@ export function render() {
   tasks.forEach((task, id) => {
     const cloneTask = templateCloning(task, id);
 
-    if (task.priority === 'High') {
+    if (task.priority === 'Высокий') {
       innerTasksHighPriorities.append(cloneTask);
     } else {
       innerTasksLowPriorities.append(cloneTask);
