@@ -12,8 +12,8 @@ export function editingTask(target, task) {
     alert('Error: Нельзя иметь пустую задачу');
   } else {
     tasks.forEach((el, id) => {
-      if (el === taskText) {
-        tasks[id] = modalInputValue;
+      if (el.text === taskText) {
+        tasks[id].text = modalInputValue;
       }
     });
 

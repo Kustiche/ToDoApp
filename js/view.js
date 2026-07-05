@@ -12,6 +12,7 @@ export const closeModalBtn = document.querySelector('.modal__btn-close');
 export const modalForm = document.querySelector('.modal__form');
 
 export const forms = document.querySelectorAll('.form');
+export const innersTasks = document.querySelectorAll('.todo__inner-tasks');
 
 export const innerHighPriority = document.getElementById('highPriority');
 export const innerLowPriority = document.getElementById('lowPriority');
