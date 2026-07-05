@@ -1,5 +1,6 @@
 import { addTask } from './addTask.js';
 import { deleteTask } from './deleteTask.js';
+import { openEditingModal } from './openEditingModal.js';
 import { form, innerTasks } from './view.js';
 
 export const tasks = [];
@@ -11,9 +12,12 @@ form.addEventListener('submit', (e) => {
 });
 
 innerTasks.addEventListener('click', (e) => {
-  const isDeleteBtn = e.target.classList.contains('todo__btn-delete');
+  const isTaskText = e.target.classList.contains('todo__text');
+  const isTaskDeleteBtn = e.target.classList.contains('todo__btn-delete');
 
-  if (isDeleteBtn) {
+  if (isTaskText) {
+    openEditingModal(e.target);
+  } else if (isTaskDeleteBtn) {
     deleteTask(e.target);
   }
 });
