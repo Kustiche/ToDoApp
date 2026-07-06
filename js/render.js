@@ -1,6 +1,6 @@
 import { tasks } from './main.js';
 import { templateCloning } from './templateCloning.js';
-import { innerHighPriority, innerLowPriority } from './view.js';
+import { innerHighPriority, innerLowPriority, PRIORITIES } from './view.js';
 
 export function render() {
   const innerTasksHighPriorities = innerHighPriority.querySelector('.todo__inner-tasks');
@@ -11,10 +11,12 @@ export function render() {
 
   tasks.forEach((task, id) => {
     const cloneTask = templateCloning(task, id);
+    const isPriorityHigh = task.priority === PRIORITIES.HIGH;
+    const isPriorityLow = task.priority === PRIORITIES.LOW;
 
-    if (task.priority === 'Высокий') {
+    if (isPriorityHigh) {
       innerTasksHighPriorities.append(cloneTask);
-    } else {
+    } else if (isPriorityLow) {
       innerTasksLowPriorities.append(cloneTask);
     }
   });
