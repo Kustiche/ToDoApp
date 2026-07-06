@@ -1,5 +1,5 @@
 import { tasks } from './main.js';
-import { modalBtnDone, modalBtnHigh, modalBtnInProgress, modalBtnLow, modalEditingTask, PRIORITIES, STATUSES } from './view.js';
+import { modalBtnDone, modalBtnHigh, modalBtnInProgress, modalBtnLow, modalBtns, modalEditingTask, PRIORITIES, STATUSES } from './view.js';
 
 export function preparingModalBeforeOpening(taskText) {
   const editingInput = modalEditingTask.querySelector('.modal__input-text');
@@ -13,20 +13,22 @@ export function preparingModalBeforeOpening(taskText) {
     const isTaskHigh = task.priority === PRIORITIES.HIGH;
     const isTaskLow = task.priority === PRIORITIES.LOW;
 
+    modalBtns.forEach((btn) => {
+      if (isTask) {
+        btn.style.backgroundColor = '';
+      }
+    });
+
     if (isTask && isTaskDone) {
       modalBtnDone.style.backgroundColor = '#5F646D';
-      modalBtnInProgress.style.backgroundColor = '';
     } else if (isTask && isTaskInProgress) {
       modalBtnInProgress.style.backgroundColor = '#5F646D';
-      modalBtnDone.style.backgroundColor = '';
     }
 
     if (isTask && isTaskHigh) {
       modalBtnHigh.style.backgroundColor = '#5F646D';
-      modalBtnLow.style.backgroundColor = '';
     } else if (isTask && isTaskLow) {
       modalBtnLow.style.backgroundColor = '#5F646D';
-      modalBtnHigh.style.backgroundColor = '';
     }
   });
 }

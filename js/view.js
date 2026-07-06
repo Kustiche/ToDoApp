@@ -15,6 +15,7 @@ export const modalInnerPriorities = document.querySelector('.modal__inner-priori
 
 export const forms = document.querySelectorAll('.form');
 export const innersTasks = document.querySelectorAll('.todo__inner-tasks');
+export const modalBtns = document.querySelectorAll('.modal__btn');
 
 export const innerHighPriority = document.getElementById('highPriority');
 export const innerLowPriority = document.getElementById('lowPriority');
