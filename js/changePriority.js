@@ -17,7 +17,9 @@ export function changePriority(target, task) {
     }
   });
 
-  localStorage.setItem('tasks', JSON.stringify(tasks));
-  render();
-  closeModalEditingTasks();
+  if (isBtnHigh || isBtnLow) {
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+    render();
+    closeModalEditingTasks();
+  }
 }
