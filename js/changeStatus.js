@@ -20,6 +20,7 @@ export function changeStatus(target, task) {
 
   if (isBtnDone || isBtnInProgress) {
     sortingTasks();
+    localStorage.setItem('tasks', JSON.stringify(tasks));
     render();
     closeModalEditingTasks();
   }
