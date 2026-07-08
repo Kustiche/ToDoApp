@@ -11,9 +11,8 @@ export function templateCloning(task, id) {
   templateText.textContent = task.text;
 
   if (isStatusDone) {
-    templateTask.style.border = '1px solid Green';
-  } else if (isStatusInProgress) {
-    templateTask.style.border = '1px solid Red';
+    templateText.style.textDecoration = 'line-through';
+    templateText.style.color = '#a1a1a1';
   }
 
   return cloneTask;
