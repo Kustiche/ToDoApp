@@ -1,4 +1,4 @@
-import { closeModalEditingTasks } from './closeModalEditingTasks.js';
+import { closeModal } from './closeModal.js';
 import { tasks } from '../main.js';
 import { render } from '../tasks/render.js';
 import { PRIORITIES } from '../view.js';
@@ -20,6 +20,6 @@ export function changePriority(target, task) {
   if (isBtnHigh || isBtnLow) {
     localStorage.setItem('tasks', JSON.stringify(tasks));
     render();
-    closeModalEditingTasks();
+    closeModal();
   }
 }

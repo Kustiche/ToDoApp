@@ -1,7 +1,7 @@
 import { tasks } from '../main.js';
 import { modalBtnDone, modalBtnHigh, modalBtnInProgress, modalBtnLow, modalBtns, modalEditingTask, PRIORITIES, STATUSES } from '../view.js';
 
-export function preparingModalBeforeOpening(taskText) {
+export function prepareModal(taskText) {
   const editingInput = modalEditingTask.querySelector('.modal__input-text');
 
   editingInput.value = taskText.textContent;

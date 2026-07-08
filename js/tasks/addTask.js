@@ -1,6 +1,6 @@
 import { tasks } from '../main.js';
 import { render } from './render.js';
-import { sortingTasks } from './sortingTasks.js';
+import { sortTasks } from './sortTasks.js';
 import { innerHighPriority, PRIORITIES, STATUSES } from '../view.js';
 
 export function addTask(form) {
@@ -22,6 +22,6 @@ export function addTask(form) {
     input.value = '';
   }
 
-  sortingTasks();
+  sortTasks();
   render();
 }

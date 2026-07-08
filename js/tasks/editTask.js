@@ -1,8 +1,8 @@
-import { closeModalEditingTasks } from '../modal/closeModalEditingTasks.js';
+import { closeModal } from '../modal/closeModal.js';
 import { tasks } from '../main.js';
 import { render } from './render.js';
 
-export function editingTask(target, task) {
+export function editTask(target, task) {
   const modalInputForm = target.querySelector('.modal__input-text');
   const modalInputValue = modalInputForm.value.trim().replace(/\s+/g, ' ');
   const taskText = task.textContent;
@@ -23,5 +23,5 @@ export function editingTask(target, task) {
   }
 
   render();
-  closeModalEditingTasks();
+  closeModal();
 }

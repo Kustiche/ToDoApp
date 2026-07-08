@@ -1,7 +1,7 @@
-import { closeModalEditingTasks } from './closeModalEditingTasks.js';
+import { closeModal } from './closeModal.js';
 import { tasks } from '../main.js';
 import { render } from '../tasks/render.js';
-import { sortingTasks } from '../tasks/sortingTasks.js';
+import { sortTasks } from '../tasks/sortTasks.js';
 import { modalBtnDone, modalBtnInProgress, STATUSES } from '../view.js';
 
 export function changeStatus(target, task) {
@@ -19,9 +19,9 @@ export function changeStatus(target, task) {
   });
 
   if (isBtnDone || isBtnInProgress) {
-    sortingTasks();
+    sortTasks();
     localStorage.setItem('tasks', JSON.stringify(tasks));
     render();
-    closeModalEditingTasks();
+    closeModal();
   }
 }

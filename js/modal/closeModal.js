@@ -1,5 +1,5 @@
 import { modalEditingTask } from '../view.js';
 
-export function closeModalEditingTasks() {
+export function closeModal() {
   modalEditingTask.close();
 }
