@@ -1,5 +1,5 @@
-import { tasks } from './main.js';
-import { modalBtnDone, modalBtnHigh, modalBtnInProgress, modalBtnLow, modalBtns, modalEditingTask, PRIORITIES, STATUSES } from './view.js';
+import { tasks } from '../main.js';
+import { modalBtnDone, modalBtnHigh, modalBtnInProgress, modalBtnLow, modalBtns, modalEditingTask, PRIORITIES, STATUSES } from '../view.js';
 
 export function preparingModalBeforeOpening(taskText) {
   const editingInput = modalEditingTask.querySelector('.modal__input-text');

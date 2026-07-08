@@ -1,4 +1,4 @@
-import { STATUSES, template } from './view.js';
+import { STATUSES, template } from '../view.js';
 
 export function templateCloning(task, id) {
   const cloneTask = template.content.cloneNode(true);

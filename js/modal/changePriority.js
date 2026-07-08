@@ -1,7 +1,7 @@
 import { closeModalEditingTasks } from './closeModalEditingTasks.js';
-import { tasks } from './main.js';
-import { render } from './render.js';
-import { PRIORITIES } from './view.js';
+import { tasks } from '../main.js';
+import { render } from '../tasks/render.js';
+import { PRIORITIES } from '../view.js';
 
 export function changePriority(target, task) {
   const isBtnHigh = target.textContent === 'Высокий приоритет';

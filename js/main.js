@@ -1,11 +1,11 @@
-import { addTask } from './addTask.js';
-import { changePriority } from './changePriority.js';
-import { changeStatus } from './changeStatus.js';
-import { closeModalEditingTasks } from './closeModalEditingTasks.js';
-import { deleteTask } from './deleteTask.js';
-import { editingTask } from './editingTask.js';
-import { openModalEditingTasks } from './openModalEditingTasks.js';
-import { render } from './render.js';
+import { addTask } from './tasks/addTask.js';
+import { changePriority } from './modal/changePriority.js';
+import { changeStatus } from './modal/changeStatus.js';
+import { closeModalEditingTasks } from './modal/closeModalEditingTasks.js';
+import { deleteTask } from './tasks/deleteTask.js';
+import { editingTask } from './tasks/editingTask.js';
+import { openModalEditingTasks } from './modal/openModalEditingTasks.js';
+import { render } from './tasks/render.js';
 import { closeModalBtn, forms, innersTasks, modalEditingTask, modalForm, modalInnerPriorities, modalInnerStatuses } from './view.js';
 
 export const tasks = JSON.parse(localStorage.getItem('tasks')) ?? [];

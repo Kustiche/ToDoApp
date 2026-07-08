@@ -1,4 +1,4 @@
-import { tasks } from './main.js';
+import { tasks } from '../main.js';
 
 export function sortingTasks() {
   tasks.sort((a, b) => {

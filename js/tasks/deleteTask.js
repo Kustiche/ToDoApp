@@ -1,4 +1,4 @@
-import { tasks } from './main.js';
+import { tasks } from '../main.js';
 import { render } from './render.js';
 
 export function deleteTask(deleteBtn) {

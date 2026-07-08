@@ -1,5 +1,5 @@
-import { closeModalEditingTasks } from './closeModalEditingTasks.js';
-import { tasks } from './main.js';
+import { closeModalEditingTasks } from '../modal/closeModalEditingTasks.js';
+import { tasks } from '../main.js';
 import { render } from './render.js';
 
 export function editingTask(target, task) {

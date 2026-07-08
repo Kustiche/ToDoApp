@@ -1,6 +1,6 @@
-import { tasks } from './main.js';
+import { tasks } from '../main.js';
 import { templateCloning } from './templateCloning.js';
-import { innerHighPriority, innerLowPriority, PRIORITIES } from './view.js';
+import { innerHighPriority, innerLowPriority, PRIORITIES } from '../view.js';
 
 export function render() {
   const innerTasksHighPriorities = innerHighPriority.querySelector('.todo__inner-tasks');

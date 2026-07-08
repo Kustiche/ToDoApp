@@ -1,8 +1,8 @@
 import { closeModalEditingTasks } from './closeModalEditingTasks.js';
-import { tasks } from './main.js';
-import { render } from './render.js';
-import { sortingTasks } from './sortingTasks.js';
-import { modalBtnDone, modalBtnInProgress, STATUSES } from './view.js';
+import { tasks } from '../main.js';
+import { render } from '../tasks/render.js';
+import { sortingTasks } from '../tasks/sortingTasks.js';
+import { modalBtnDone, modalBtnInProgress, STATUSES } from '../view.js';
 
 export function changeStatus(target, task) {
   const isBtnDone = target.textContent === 'Завершена';
