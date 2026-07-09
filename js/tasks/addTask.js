@@ -1,4 +1,4 @@
-import { tasks } from '../main.js';
+import { tasks } from './updateTasksArray.js';
 import { render } from './render.js';
 import { sortTasks } from './sortTasks.js';
 import { innerHighPriority, PRIORITIES, STATUSES } from '../view.js';

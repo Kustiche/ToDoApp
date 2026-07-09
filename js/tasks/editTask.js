@@ -1,5 +1,5 @@
 import { closeModal } from '../modal/closeModal.js';
-import { tasks } from '../main.js';
+import { tasks } from './updateTasksArray.js';
 import { render } from './render.js';
 
 export function editTask(target, task) {

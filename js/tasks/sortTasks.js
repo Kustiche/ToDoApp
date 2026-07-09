@@ -1,4 +1,4 @@
-import { tasks } from '../main.js';
+import { tasks } from './updateTasksArray.js';
 import { STATUS_ORDER } from '../view.js';
 
 export function sortTasks() {

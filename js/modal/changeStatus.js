@@ -1,5 +1,5 @@
 import { closeModal } from './closeModal.js';
-import { tasks } from '../main.js';
+import { tasks } from '../tasks/updateTasksArray.js';
 import { render } from '../tasks/render.js';
 import { sortTasks } from '../tasks/sortTasks.js';
 import { modalBtnDone, modalBtnInProgress, STATUSES } from '../view.js';

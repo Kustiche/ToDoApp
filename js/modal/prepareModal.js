@@ -1,4 +1,4 @@
-import { tasks } from '../main.js';
+import { tasks } from '../tasks/updateTasksArray.js';
 import {
   COLORS,
   modalBtnDone,

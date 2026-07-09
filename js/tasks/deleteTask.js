@@ -1,4 +1,4 @@
-import { tasks } from '../main.js';
+import { tasks, updateTasksArray } from './updateTasksArray.js';
 import { render } from './render.js';
 
 export function deleteTask(deleteBtn) {
@@ -7,7 +7,7 @@ export function deleteTask(deleteBtn) {
 
   const newTasks = tasks.filter((el) => el.id !== taskId);
 
-  localStorage.setItem('tasks', JSON.stringify(newTasks));
+  updateTasksArray(newTasks);
 
-  render(newTasks);
+  render();
 }

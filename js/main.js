@@ -8,8 +8,6 @@ import { openModal } from './modal/openModal.js';
 import { render } from './tasks/render.js';
 import { closeModalBtn, forms, innersTasks, modalEditingTask, modalForm, modalInnerPriorities, modalInnerStatuses } from './view.js';
 
-export const tasks = JSON.parse(localStorage.getItem('tasks')) ?? [];
-
 let task = null;
 
 forms.forEach((form) => {
