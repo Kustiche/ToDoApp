@@ -8,8 +8,8 @@ export function changeStatus(target, task) {
   const isBtnDone = target.textContent === 'Завершена';
   const isBtnInProgress = target.textContent === 'В процессе';
 
-  tasks.forEach((el, id) => {
-    const isIdTask = id === Number(task.id);
+  tasks.forEach((el) => {
+    const isIdTask = el.id === Number(task.id);
 
     if (isIdTask && isBtnDone) {
       el.status = STATUSES.DONE;
