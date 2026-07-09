@@ -17,9 +17,9 @@ export function prepareModal(taskText) {
 
   editingInput.value = taskText.textContent;
 
-  tasks.forEach((task, id) => {
+  tasks.forEach((task) => {
     const isTask = task.text === taskText.textContent;
-    const isTaskId = id === Number(innerTask.id);
+    const isTaskId = task.id === Number(innerTask.id);
     const isTaskDone = task.status === STATUSES.DONE;
     const isTaskInProgress = task.status === STATUSES.IN_PROGRESS;
     const isTaskHigh = task.priority === PRIORITIES.HIGH;
