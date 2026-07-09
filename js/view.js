@@ -8,6 +8,15 @@ export const PRIORITIES = {
   LOW: 'Низкий',
 };
 
+export const COLORS = {
+  SHUTTLE_GRAY: '#5F646D',
+  SILVER_CHALICE: '#a1a1a1',
+};
+
+export const STYLES_TEXT_DECORATION = {
+  LINE_THROUGH: 'line-through',
+};
+
 export const closeModalBtn = document.querySelector('.modal__btn-close');
 export const modalForm = document.querySelector('.modal__form');
 export const modalInnerStatuses = document.querySelector('.modal__inner-statuses');
