@@ -7,8 +7,8 @@ export function changePriority(target, task) {
   const isBtnHigh = target.textContent === 'Высокий приоритет';
   const isBtnLow = target.textContent === 'Низкий приоритет';
 
-  tasks.forEach((el, id) => {
-    const isIdTask = id === Number(task.id);
+  tasks.forEach((el) => {
+    const isIdTask = el.id === Number(task.id);
 
     if (isIdTask && isBtnHigh) {
       el.priority = PRIORITIES.HIGH;
