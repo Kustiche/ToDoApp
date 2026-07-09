@@ -10,6 +10,8 @@ export function addTask(form) {
   const inputText = input.value.trim().replace(/\s+/g, ' ');
   const isInputText = inputText === '';
 
+  var taskId = JSON.parse(localStorage.getItem('taskId')) ?? 0;
+
   if (isInputText) {
     alert('Error: Нельзя создать пустую задачу');
   } else {
@@ -17,9 +19,13 @@ export function addTask(form) {
       text: inputText,
       status: STATUSES.IN_PROGRESS,
       priority: isInnerHighPriority ? PRIORITIES.HIGH : PRIORITIES.LOW,
+      id: taskId,
     });
-    localStorage.setItem('tasks', JSON.stringify(tasks));
+    taskId++;
     input.value = '';
+
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+    localStorage.setItem('taskId', JSON.stringify(taskId));
   }
 
   sortTasks();

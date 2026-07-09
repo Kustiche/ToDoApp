@@ -3,10 +3,11 @@ import { render } from './render.js';
 
 export function deleteTask(deleteBtn) {
   const task = deleteBtn.closest('.todo__task');
-  const taskId = task.id;
+  const taskId = Number(task.id);
 
-  tasks.splice(taskId, 1);
-  localStorage.setItem('tasks', JSON.stringify(tasks));
+  const newTasks = tasks.filter((el) => el.id !== taskId);
 
-  render();
+  localStorage.setItem('tasks', JSON.stringify(newTasks));
+
+  render(newTasks);
 }
