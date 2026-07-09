@@ -1,11 +1,6 @@
 import { tasks } from '../main.js';
+import { STATUS_ORDER } from '../view.js';
 
 export function sortTasks() {
-  tasks.sort((a, b) => {
-    if (a.status[0] > b.status[0]) {
-      return 1;
-    } else if (a.status[0] < b.status[0]) {
-      return -1;
-    }
-  });
+  tasks.sort((a, b) => STATUS_ORDER[a.status] - STATUS_ORDER[b.status]);
 }

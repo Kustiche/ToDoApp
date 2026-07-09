@@ -3,6 +3,11 @@ export const STATUSES = {
   DONE: 'Завершена',
 };
 
+export const STATUS_ORDER = {
+  [STATUSES.IN_PROGRESS]: 0,
+  [STATUSES.DONE]: 1,
+};
+
 export const PRIORITIES = {
   HIGH: 'Высокий',
   LOW: 'Низкий',
