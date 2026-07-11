@@ -2,7 +2,7 @@ import { closeModal } from './closeModal.js';
 import { tasks } from '../tasks/updateTasksArray.js';
 import { render } from '../tasks/render.js';
 import { sortTasks } from '../tasks/sortTasks.js';
-import { modalBtnDone, modalBtnInProgress, STATUSES } from '../view.js';
+import { STATUSES } from '../view.js';
 
 export function changeStatus(target, task) {
   const isBtnDone = target.textContent === 'Завершена';

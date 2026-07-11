@@ -5,7 +5,6 @@ import { render } from './render.js';
 export function editTask(target, task) {
   const modalInputForm = target.querySelector('.modal__input-text');
   const modalInputValue = modalInputForm.value.trim().replace(/\s+/g, ' ');
-  const taskText = task.textContent;
   const isModalInputValue = modalInputValue === '';
 
   if (isModalInputValue) {

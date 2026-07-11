@@ -1,11 +1,10 @@
 import { tasks } from './updateTasksArray.js';
 import { render } from './render.js';
 import { sortTasks } from './sortTasks.js';
-import { innerHighPriority, PRIORITIES, STATUSES } from '../view.js';
+import { PRIORITIES, STATUSES } from '../view.js';
 
 export function addTask(form) {
   const isInnerHighPriority = form.closest('#highPriority');
-  const isInnerLowPriority = form.closest('#lowPriority');
   const input = form.querySelector('.form__input-text');
   const inputText = input.value.trim().replace(/\s+/g, ' ');
   const isInputText = inputText === '';

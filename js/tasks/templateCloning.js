@@ -5,7 +5,6 @@ export function templateCloning(task) {
   const templateTask = cloneTask.querySelector('.todo__task');
   const templateText = cloneTask.querySelector('.todo__text');
   const isStatusDone = task.status === STATUSES.DONE;
-  const isStatusInProgress = task.status === STATUSES.IN_PROGRESS;
 
   templateTask.id = task.id;
   templateText.textContent = task.text;
