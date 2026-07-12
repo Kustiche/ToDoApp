@@ -26,8 +26,8 @@ export function addTask(form) {
 
     saveData('tasks', tasks);
     saveData('taskId', taskId);
-  }
 
-  sortTasks();
-  render();
+    sortTasks();
+    render();
+  }
 }
