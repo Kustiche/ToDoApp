@@ -10,8 +10,6 @@ export function addTask(form) {
   const inputText = input.value.trim().replace(/\s+/g, ' ');
   const isInputText = inputText === '';
 
-  var taskId = JSON.parse(localStorage.getItem('taskId')) ?? 0;
-
   if (isInputText) {
     alert('Error: Нельзя создать пустую задачу');
   } else {
@@ -19,13 +17,11 @@ export function addTask(form) {
       text: inputText,
       status: STATUSES.IN_PROGRESS,
       priority: isInnerHighPriority ? PRIORITIES.HIGH : PRIORITIES.LOW,
-      id: taskId,
+      id: Date.now(),
     });
-    taskId++;
     input.value = '';
 
     saveData('tasks', tasks);
-    saveData('taskId', taskId);
 
     sortTasks();
     render();
