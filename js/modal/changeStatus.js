@@ -3,6 +3,7 @@ import { tasks } from '../tasks/updateTasksArray.js';
 import { render } from '../tasks/render.js';
 import { sortTasks } from '../tasks/sortTasks.js';
 import { STATUSES } from '../view.js';
+import { saveData } from '../tasks/saveData.js';
 
 export function changeStatus(target, task) {
   const isBtnDone = target.textContent === 'Завершена';
@@ -20,7 +21,7 @@ export function changeStatus(target, task) {
 
   if (isBtnDone || isBtnInProgress) {
     sortTasks();
-    localStorage.setItem('tasks', JSON.stringify(tasks));
+    saveData('tasks', tasks);
     render();
     closeModal();
   }

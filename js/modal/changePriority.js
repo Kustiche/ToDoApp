@@ -2,6 +2,7 @@ import { closeModal } from './closeModal.js';
 import { tasks } from '../tasks/updateTasksArray.js';
 import { render } from '../tasks/render.js';
 import { PRIORITIES } from '../view.js';
+import { saveData } from '../tasks/saveData.js';
 
 export function changePriority(target, task) {
   const isBtnHigh = target.textContent === 'Высокий приоритет';
@@ -18,7 +19,7 @@ export function changePriority(target, task) {
   });
 
   if (isBtnHigh || isBtnLow) {
-    localStorage.setItem('tasks', JSON.stringify(tasks));
+    saveData('tasks', tasks);
     render();
     closeModal();
   }

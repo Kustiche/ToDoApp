@@ -1,6 +1,7 @@
 import { closeModal } from '../modal/closeModal.js';
 import { tasks } from './updateTasksArray.js';
 import { render } from './render.js';
+import { saveData } from './saveData.js';
 
 export function editTask(target, task) {
   const modalInputForm = target.querySelector('.modal__input-text');
@@ -18,7 +19,7 @@ export function editTask(target, task) {
       }
     });
 
-    localStorage.setItem('tasks', JSON.stringify(tasks));
+    saveData('tasks', tasks);
   }
 
   render();

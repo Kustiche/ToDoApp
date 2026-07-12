@@ -2,6 +2,7 @@ import { tasks } from './updateTasksArray.js';
 import { render } from './render.js';
 import { sortTasks } from './sortTasks.js';
 import { PRIORITIES, STATUSES } from '../view.js';
+import { saveData } from './saveData.js';
 
 export function addTask(form) {
   const isInnerHighPriority = form.closest('#highPriority');
@@ -23,8 +24,8 @@ export function addTask(form) {
     taskId++;
     input.value = '';
 
-    localStorage.setItem('tasks', JSON.stringify(tasks));
-    localStorage.setItem('taskId', JSON.stringify(taskId));
+    saveData('tasks', tasks);
+    saveData('taskId', taskId);
   }
 
   sortTasks();
