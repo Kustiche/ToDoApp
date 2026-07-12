@@ -8,7 +8,7 @@ export function editTask(target, task) {
   const isModalInputValue = modalInputValue === '';
 
   if (isModalInputValue) {
-    alert('Error: Нельзя иметь пустую задачу');
+    alert('Error: Нельзя создать пустую задачу');
   } else {
     tasks.forEach((el) => {
       const isIdTask = el.id === Number(task.id);
