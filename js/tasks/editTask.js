@@ -18,10 +18,10 @@ export function editTask(target, task) {
         el.text = modalInputValue;
 
         saveData('tasks', tasks);
+
+        render();
+        closeModal();
       }
     });
   }
-
-  render();
-  closeModal();
 }
