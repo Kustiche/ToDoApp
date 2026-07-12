@@ -16,10 +16,10 @@ export function editTask(target, task) {
 
       if (isIdTask) {
         el.text = modalInputValue;
+
+        saveData('tasks', tasks);
       }
     });
-
-    saveData('tasks', tasks);
   }
 
   render();
