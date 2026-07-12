@@ -18,7 +18,6 @@ export function prepareModal(taskText) {
   editingInput.value = taskText.textContent;
 
   tasks.forEach((task) => {
-    const isTask = task.text === taskText.textContent;
     const isTaskId = task.id === Number(innerTask.id);
     const isTaskDone = task.status === STATUSES.DONE;
     const isTaskInProgress = task.status === STATUSES.IN_PROGRESS;
@@ -26,20 +25,20 @@ export function prepareModal(taskText) {
     const isTaskLow = task.priority === PRIORITIES.LOW;
 
     modalBtns.forEach((btn) => {
-      if (isTask && isTaskId) {
+      if (isTaskId) {
         btn.style.backgroundColor = '';
       }
     });
 
-    if (isTask && isTaskId && isTaskDone) {
+    if (isTaskId && isTaskDone) {
       modalBtnDone.style.backgroundColor = COLORS.SHUTTLE_GRAY;
-    } else if (isTask && isTaskId && isTaskInProgress) {
+    } else if (isTaskId && isTaskInProgress) {
       modalBtnInProgress.style.backgroundColor = COLORS.SHUTTLE_GRAY;
     }
 
-    if (isTask && isTaskId && isTaskHigh) {
+    if (isTaskId && isTaskHigh) {
       modalBtnHigh.style.backgroundColor = COLORS.SHUTTLE_GRAY;
-    } else if (isTask && isTaskId && isTaskLow) {
+    } else if (isTaskId && isTaskLow) {
       modalBtnLow.style.backgroundColor = COLORS.SHUTTLE_GRAY;
     }
   });
