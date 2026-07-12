@@ -1,4 +1,4 @@
-import { saveData } from './saveData';
+import { saveData } from './saveData.js';
 
 export var tasks = JSON.parse(localStorage.getItem('tasks')) ?? [];
 
