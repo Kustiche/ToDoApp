@@ -9,8 +9,8 @@ export function render() {
   innerTasksHighPriorities.innerHTML = '';
   innerTasksLowPriorities.innerHTML = '';
 
-  tasks.forEach((task, id) => {
-    const cloneTask = templateCloning(task, id);
+  tasks.forEach((task) => {
+    const cloneTask = templateCloning(task);
     const isPriorityHigh = task.priority === PRIORITIES.HIGH;
     const isPriorityLow = task.priority === PRIORITIES.LOW;
 
